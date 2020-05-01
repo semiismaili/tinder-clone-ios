@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48441A58245CA5A400C372FB /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48441A57245CA5A400C372FB /* LogInViewController.swift */; };
 		489CC2432459AF76004E1275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CC2422459AF76004E1275 /* AppDelegate.swift */; };
 		489CC2452459AF76004E1275 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CC2442459AF76004E1275 /* ViewController.swift */; };
 		489CC2482459AF76004E1275 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489CC2462459AF76004E1275 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		27DF19B7B646E2E8BAC27D49 /* Pods-tinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tinder/Pods-tinder.debug.xcconfig"; sourceTree = "<group>"; };
+		48441A57245CA5A400C372FB /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		489CC23F2459AF76004E1275 /* tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489CC2422459AF76004E1275 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		489CC2442459AF76004E1275 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				489CC2422459AF76004E1275 /* AppDelegate.swift */,
 				489CC2442459AF76004E1275 /* ViewController.swift */,
 				489CC2462459AF76004E1275 /* Main.storyboard */,
+				48441A57245CA5A400C372FB /* LogInViewController.swift */,
 				489CC2492459AF76004E1275 /* Assets.xcassets */,
 				489CC24B2459AF76004E1275 /* LaunchScreen.storyboard */,
 				489CC24E2459AF76004E1275 /* Info.plist */,
@@ -205,6 +208,7 @@
 			files = (
 				489CC2452459AF76004E1275 /* ViewController.swift in Sources */,
 				489CC2432459AF76004E1275 /* AppDelegate.swift in Sources */,
+				48441A58245CA5A400C372FB /* LogInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
