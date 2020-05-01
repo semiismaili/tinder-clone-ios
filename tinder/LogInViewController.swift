@@ -48,6 +48,7 @@ class LogInViewController: UIViewController {
                     
                 }else{
                     print("Sign Up succesful!")
+                    self.performSegue(withIdentifier: "updateSegue", sender: nil)
                 }
             })
             
@@ -71,6 +72,7 @@ class LogInViewController: UIViewController {
                             
                         }else{
                             print("Log In succesful!")
+                            self.performSegue(withIdentifier: "updateSegue", sender: nil)
                         }
                     })
                 }
@@ -80,6 +82,12 @@ class LogInViewController: UIViewController {
             
         }
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if PFUser.current() != nil {
+            self.performSegue(withIdentifier: "updateSegue", sender: nil)
+        }
     }
     
     @IBAction func changeLogInSignUpTapped(_ sender: Any) {
