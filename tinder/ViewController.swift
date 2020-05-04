@@ -25,6 +25,13 @@ class ViewController: UIViewController {
         
         updateImage()
         
+        PFGeoPoint.geoPointForCurrentLocation { (geoPoint, error) in
+            if let point = geoPoint {
+                PFUser.current()?["location"] = point
+                PFUser.current()?.saveInBackground()
+            }
+        }
+        
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
@@ -94,6 +101,12 @@ class ViewController: UIViewController {
         
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//
+//        updateImage()
+//
+//    }
+    
     func updateImage(){
         
         if let query = PFUser.query(){
@@ -117,6 +130,11 @@ class ViewController: UIViewController {
             }
             
             query.whereKey("objectId", notContainedIn: ignoredUsers)
+          
+            if let geoPoint = PFUser.current()?["location"] as? PFGeoPoint{
+                query.whereKey("location", withinGeoBoxFromSouthwest: PFGeoPoint(latitude: geoPoint.latitude - 1, longitude: geoPoint.longitude - 1), toNortheast: PFGeoPoint(latitude: geoPoint.latitude + 1, longitude: geoPoint.longitude + 1))
+                
+            }
             
             query.limit = 1
             
@@ -124,7 +142,7 @@ class ViewController: UIViewController {
                 if let users = objects {
                     if objects?.count == 0 {
                         print("No more potential candidates left!")
-                        self.matchImageView.image = UIImage(named: "user")
+                        self.matchImageView.image = UIImage(named: "nomoreuser")
                     }else{
                         for object in users {
                             if let user = object as? PFUser {
